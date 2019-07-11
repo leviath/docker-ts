@@ -1,0 +1,70 @@
+@import 'variables';
+@import 'breakpoints';
+
+:host {
+    max-width: 620px;
+    display: block;
+
+    .main-box {
+        background-color: white;
+        box-shadow: 0 2px 4px 0 $ts-silver-chalice;
+        border-radius: 4px;
+        margin: 9px;
+        padding: 12px;
+    }
+}
+
+.header {
+    @include respond-to('small') {
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+
+.headline {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    @include respond-to('small') {
+        align-self: center;
+
+        span {
+            display: none
+        }
+    }
+}
+
+.error {
+    font-size: 26px;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+        background-color: $ts-candlelight;
+        border: 1px solid $ts-candlelight;
+        padding: 5px 15px;
+        display: inline-block;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            background-color: white;
+            color: $ts-candlelight;
+            transition: all .2s linear;
+        }
+    }
+}
+

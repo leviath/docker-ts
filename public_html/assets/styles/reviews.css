@@ -1,0 +1,45 @@
+.reviews-output.fancy-bg .row:nth-child(odd) {
+    background-color: transparent;
+}
+
+.reviews-output.fancy-bg .row:nth-child(even) {
+    background-color: #FFDC0F;
+}
+
+.reviews-output .row {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px
+}
+
+.reviews-output .row:last-child {
+    margin-bottom: 0;
+}
+
+.reviews-output .row:nth-child(odd) {
+    background-color: #a4a4a4;
+}
+
+.reviews-output .row:nth-child(even) {
+    background-color: transparent;
+}
+
+.btn {
+    background-color: #FFDC0F;
+    border: 1px solid #FFDC0F;
+    padding: 5px 15px;
+    display: inline-block;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #FFDC0F;
+    transition: all .2s linear;
+}
+
+.row {
+    margin-bottom: 20px;
+}

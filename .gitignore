@@ -1,0 +1,11 @@
+wordpress/*
+!wordpress/wp-config.php
+
+public-html/api
+
+
+workspace/*
+!workspace/.gitkeep
+!workspace/hello-world.js
+!workspace/.angular-config.json
+!workspace/reviews-app

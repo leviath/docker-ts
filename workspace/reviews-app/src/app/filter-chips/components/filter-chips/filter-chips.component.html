@@ -1,0 +1,16 @@
+<ng-container *ngIf="filter$ | async as filters">
+    <div [ngClass]="{'filter-menu-open': filterMenuIsActive}">
+        <div class="mobile-header" (click)="openFilterMenu()">
+            {{activeFilter ? activeFilter.label: 'Alle'}}
+            <span class="arrow"><img [src]="'arrow-up.svg' | assetPath"></span>
+        </div>
+
+        <ul class="filter-list">
+            <li *ngFor="let filter of filters; let i = index"
+                [ngClass]="{'active': isClicked === i}"
+                (click)="changeFilter(i, filter)">
+                {{filter.label}}
+            </li>
+        </ul>
+    </div>
+</ng-container>

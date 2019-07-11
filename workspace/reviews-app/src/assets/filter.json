@@ -1,0 +1,27 @@
+[
+  {
+    "value": "",
+    "label": "Alle"
+  },
+  {
+    "value": "EXCELLENT",
+    "label": "Sehr gut"
+  },
+  {
+    "value": "GOOD",
+    "label": "Gut"
+  },
+  {
+    "value": "NEUTRAL",
+    "label": "Befriedigend"
+  },
+  {
+    "value": "POOR",
+    "label": "Ausreichend"
+  },
+  {
+    "value": "VERY_POOR",
+    "label": "Mangelhaft"
+  }
+]
+

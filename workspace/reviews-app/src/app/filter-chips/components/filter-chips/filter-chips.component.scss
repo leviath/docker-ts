@@ -1,0 +1,111 @@
+@import 'variables';
+@import 'breakpoints';
+
+
+:host {
+    @include respond-to('small') {
+        flex: 0 0 50%;
+    }
+}
+
+.mobile-header {
+    display: none;
+    background: $ts-desert-storm;
+    border-bottom: 1px solid $ts-silver-chalice;
+    color: $ts-bright-turquoise;
+    line-height: 60px;
+    text-align: right;
+    padding: 0px 10px;
+
+    @include respond-to('small') {
+        display: block;
+    }
+}
+
+.filter-menu-open {
+    .filter-list {
+        @include respond-to('small') {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 60px;
+            width: 100%;
+        }
+
+        li {
+            .arrow {
+                display: none;
+            }
+        }
+    }
+
+    .arrow {
+        img {
+            transform: none;
+        }
+    }
+}
+
+.arrow {
+    img {
+        display: inline-block;
+        width: 15px;
+        transform: scale(-1, -1);
+    }
+}
+
+.filter-list {
+    margin: 0 0 20px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include respond-to('small') {
+        display: none;
+    }
+
+    li {
+        cursor: pointer;
+        padding: 6px;
+        margin-left: 1px;
+        border-bottom: 1px solid $ts-silver-chalice;
+        border-top: 2px solid $ts-desert-storm;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        background: $ts-desert-storm;
+        box-sizing: border-box;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        @include respond-to('medium') {
+            height: 50px;
+            text-align: left;
+        }
+
+        @include respond-to('small') {
+            font-size: 20px;
+            padding: 10px;
+            border-bottom: 1px dotted $ts-silver-chalice;
+            text-align: left;
+
+            &:last-child {
+                border-bottom: 1px solid $ts-emperor;
+            }
+        }
+
+        &.active {
+            border-top: 2px solid $ts-bright-turquoise;
+            color: $ts-bright-turquoise;
+            border-bottom: 0;
+            background: white;
+
+            @include respond-to('small') {
+                border-bottom: 1px dotted $ts-bright-turquoise;
+                border-top: 0;
+            }
+        }
+    }
+}

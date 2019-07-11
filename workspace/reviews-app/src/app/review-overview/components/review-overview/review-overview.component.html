@@ -1,0 +1,20 @@
+<div *ngIf="shopReviews$ | async as shopReviews else error" class="main-box">
+    <div class="header">
+        <h2 class="headline">Erfahrungen <span>mit {{shopReviews.name}}</span></h2>
+        <app-filter-chips (filterDataChange)="getActiveFilter($event)"></app-filter-chips>
+    </div>
+
+    <app-reviews [reviews]="shopReviews.reviews" [isHighlighted]="isHighlighted" [activeFilter]="activeFilter"></app-reviews>
+
+    <div class="btn-bar">
+        <a class="btn" (click)="toggleBackgroundColor()">toggle background color</a>
+        <a class="btn" (click)="getReviews()">refresh</a>
+    </div>
+</div>
+
+<app-spinner *ngIf="pending$ | async"></app-spinner>
+
+<ng-template #error>
+    <h2 class="error" *ngIf="!(pending$ | async)">Leider ist ein Fehler aufgetreten</h2>
+</ng-template>
+

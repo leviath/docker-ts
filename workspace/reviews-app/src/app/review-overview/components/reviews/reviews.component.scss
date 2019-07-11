@@ -1,0 +1,117 @@
+@import 'variables';
+@import 'breakpoints';
+
+.shop-reviews {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.highlight {
+        &:nth-child(odd) {
+            background-color: transparent;
+        }
+
+        &:nth-child(even) {
+            background-color: $ts-candlelight;
+        }
+    }
+
+    &:nth-child(odd) {
+        background-color: $ts-desert-storm;
+    }
+
+    &:nth-child(even) {
+        background-color: transparent;
+    }
+
+    .review-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include respond-to('small') {
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+
+        .creation-date .label, .order-date {
+            display: none;
+        }
+
+        .description {
+            margin-bottom: 10px;
+        }
+
+        &.active {
+            flex-wrap: wrap;
+
+            @include respond-to('small') {
+                flex-direction: row;
+            }
+
+            .date {
+                margin-bottom: 20px;
+                flex: 0 0 100%;
+                order: 10;
+                flex-direction: column;
+
+                .creation-date .label {
+                    display: block;
+                }
+
+                .creation-date, .order-date {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .content {
+                    width: 100%;
+                    order: 100;
+                }
+
+                .arrow {
+                    order: 10;
+                    align-self: flex-end;
+
+                    img {
+                        transform: none;
+                    }
+                }
+            }
+
+            .description {
+                flex: 0 0 100%;
+                order: 20;
+            }
+        }
+
+        .date {
+            display: flex;
+            color: $ts-star-dust;
+
+            @include respond-to('small') {
+                align-self: flex-end;
+            }
+        }
+    }
+
+    .arrow {
+        img {
+            display: inline-block;
+            margin-left: 5px;
+            width: 15px;
+            transform: scale(-1, -1);
+        }
+    }
+
+    .image {
+        width: 50px;
+        height: 50px;
+        background: $ts-bright-turquoise;
+        margin-right: 20px;
+    }
+}

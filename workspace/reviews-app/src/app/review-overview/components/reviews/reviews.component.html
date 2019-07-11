@@ -1,0 +1,33 @@
+<div *ngFor="let shopReview of (reviews | flagFilter: activeFilter ? activeFilter.value : '') | orderBy: 'mark': 'descending'; let i = index"
+     class="shop-reviews"
+     [ngClass]="isHighlighted ? 'highlight' : ''">
+
+    <div class="image"></div>
+    <div class="review-content" [ngClass]="{'active': showDateInformation === i}">
+        <div class="description">
+            <span class="mark"><strong>Mark:</strong> {{shopReview.markDescription}}</span>
+            <span class="comment"><strong>Comment:</strong> {{shopReview.comment}}</span>
+        </div>
+        <div class="date">
+            <div class="content">
+                <div class="creation-date">
+                    <span class="label">Datum der Veröffentlichung:</span>
+                    {{shopReview.creationDate | date:'dd.MM.yyyy'}}
+                </div>
+                <div class="order-date">
+                    <span class="label">Datum der Kauferfahrung:</span>
+                    {{shopReview.orderDate | date:'dd.MM.yyyy'}}
+                </div>
+            </div>
+            <div class="arrow" (click)="toggleActiveClass(i)">
+                <span class="arrow"><img [src]="'arrow-up.svg' | assetPath"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="(reviews | flagFilter: activeFilter ? activeFilter.value : '').length === 0">
+    <h2 class="error">Leider wurden keine Ergebnisse für <i>{{activeFilter.label}}</i> gefunden</h2>
+</div>
+
+
